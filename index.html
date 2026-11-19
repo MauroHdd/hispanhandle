@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hispanhandle — Conviértete en agente de seguros | Become an insurance agent</title>
+<meta name="description" content="Conviértete en agente de seguros sin experiencia previa. Entrenamiento y licencia pagados. Oficinas en Pensacola, Mary Esther, Panama City y Jacksonville, FL.">
+<link rel="icon" href="assets/hispanhandle-logo.png">
+<meta property="og:title" content="Hispanhandle — Conviértete en agente de seguros">
+<meta property="og:image" content="assets/hispanhandle-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff;color:#10223a;font-family:'Source Sans 3',system-ui,sans-serif;font-size:17px;line-height:1.55}
+a{color:#2b6f9e}a:hover{color:#1c5378}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+*{box-sizing:border-box;min-width:0}
+h1,h2,h3{font-family:'Archivo',system-ui,sans-serif;margin:0;text-wrap:balance}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{color:#10223a;text-decoration:none;font-weight:600;font-size:16px}
+.navlinks a:hover{color:#2b6f9e}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.apply{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.full{grid-column:1/-1}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:6px;color:#10223a}
+input,select{width:100%;min-height:48px;font:16px 'Source Sans 3',sans-serif;padding:10px 14px;border:1.5px solid #c4cfdc;border-radius:10px;background:#fff;color:#10223a}
+input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid #10223a;outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.btn-coral{background:#dddd48;color:#10223a}.btn-coral:hover{background:#e8e86a;color:#10223a}
+.btn-ghost{background:transparent;color:#ffffff;border:2px solid rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
+.lang{min-width:44px;min-height:36px;border:0;border-radius:999px;background:transparent;color:#10223a;font-weight:700;font-size:15px;cursor:pointer}.lang[aria-pressed=true]{background:#2b6f9e;color:#fff}
+.chip{padding:10px 18px;border-radius:999px;background:#eef3f9;font-weight:600;font-size:15px;color:#10223a;white-space:nowrap}
+@media(max-width:900px){.navlinks{display:none}.hero,.apply{grid-template-columns:minmax(0,1fr);gap:36px}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.g4,.fields{grid-template-columns:minmax(0,1fr)}.hidesm{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div style="width: 100%; background: #ffffff">
+
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid #e3e9f1; backdrop-filter: blur(8px)">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px">
+<a href="#inicio" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #10223a">
+<img src="assets/hispanhandle-logo.png" alt="Hispanhandle" style="height: 56px; width: auto; display: block">
+</a>
+<nav class="navlinks" aria-label="Main">
+<a href="#beneficios"><span data-t="navBenefits"></span></a>
+<a href="#proceso"><span data-t="navHow"></span></a>
+<a href="#equipo"><span data-t="navTeam"></span></a>
+<a href="#oficinas"><span data-t="navOffices"></span></a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<div role="group" aria-label="Language / Idioma" style="display: flex; background: #eef3f9; border-radius: 999px; padding: 4px">
+<button type="button" class="lang" data-lang="es" aria-pressed="true">ES</button>
+<button type="button" class="lang" data-lang="en" aria-pressed="false">EN</button>
+</div>
+<a href="#registro" class="btn btn-coral hidesm" style="min-height: 44px; font-size: 16px; padding: 0 20px"><span data-t="navApply"></span></a>
+</div>
+</div>
+</header>
+
+<section id="inicio" style="background: #17496e; color: #ffffff; padding: clamp(48px,7vw,96px) 0">
+<div class="wrap hero">
+<div style="display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-weight: 700; font-size: 17px; color: #e8e86a"><span data-t="heroKicker"></span></p>
+<h1 style="font-size: clamp(38px,5vw,60px); line-height: 1.04; font-weight: 800; color: #ffffff"><span data-t="heroTitle"></span></h1>
+<p style="margin: 0; font-size: 19px; max-width: 34em; color: #dbe7f5"><span data-t="heroSub"></span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#registro" class="btn btn-coral"><span data-t="ctaStart"></span></a>
+<a href="#video" class="btn btn-ghost"><span data-t="ctaVideo"></span></a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.2)">
+<template data-for="stats" data-as="s">
+<div><div style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 34px; line-height: 1.1; white-space: nowrap">{{s.n}}</div><div style="font-size: 15px; color: #c3d5ea">{{s.l}}</div></div>
+</template>
+</div>
+</div>
+<div style="position: relative">
+<div style="aspect-ratio: 4 / 3.4; border-radius: 24px; background: linear-gradient(160deg,#4184ad,#72a2bb); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative">
+<svg viewBox="0 0 400 340" width="100%" height="100%" aria-hidden="true" style="position: absolute; inset: 0"><circle cx="300" cy="80" r="46" fill="#e8e86a" opacity=".9"></circle><path d="M0 230c60-30 120-30 180 0s120 30 220 0v110H0z" fill="#17496e" opacity=".55"></path><path d="M0 265c70-24 130-24 200 0s130 24 200 0v75H0z" fill="#17496e"></path><path d="M0 300c80-18 150-18 220 0s110 18 180 0v40H0z" fill="#f3e3c8" opacity=".9"></path></svg>
+<span style="position: relative; background: rgba(8,47,94,.75); color: #fff; padding: 10px 16px; border-radius: 10px; font-size: 15px; font-weight: 600"><span data-t="photoNote"></span></span>
+</div>
+<div style="position: absolute; left: -16px; bottom: -22px; background: #ffffff; color: #10223a; border-radius: 16px; padding: 16px 20px; box-shadow: 0 18px 40px rgba(4,24,50,.28); display: flex; gap: 14px; align-items: center; max-width: 300px">
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2b6f9e" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"></path><path d="M8.5 12l2.5 2.5L16 9.5"></path></svg>
+<div style="font-size: 15px; line-height: 1.35"><strong><span data-t="badgeTitle"></span></strong><br><span data-t="badgeSub"></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Carriers" style="padding: 40px 0; border-bottom: 1px solid #e3e9f1">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px">
+<span style="font-weight: 700; color: #4a5b70; margin-right: 8px"><span data-t="carriers"></span></span>
+<template data-for="carriers" data-as="c"><span class="chip">{{c}}</span></template>
+</div>
+</section>
+
+<section id="beneficios" style="padding: clamp(56px,7vw,96px) 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="max-width: 720px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="benTitle"></span></h2>
+<p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="benSub"></span></p>
+</div>
+<div class="g3">
+<template data-for="benefits" data-as="b">
+<div style="background: #f3f7fb; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<div style="width: 44px; height: 44px; border-radius: 12px; background: #2b6f9e; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+<h3 style="font-size: 21px; font-weight: 800">{{b.t}}</h3>
+<p style="margin: 0; color: #3f5068">{{b.d}}</p>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<section id="proceso" style="background: #f3e9da; padding: clamp(56px,7vw,96px) 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800; max-width: 720px"><span data-t="howTitle"></span></h2>
+<div class="g3">
+<template data-for="steps" data-as="s">
+<div style="background: #ffffff; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<div style="width: 48px; height: 48px; border-radius: 999px; background: #dddd48; color: #10223a; font-family: Archivo, sans-serif; font-weight: 800; font-size: 22px; display: flex; align-items: center; justify-content: center">{{s.n}}</div>
+<h3 style="font-size: 22px; font-weight: 800">{{s.t}}</h3>
+<p style="margin: 0; color: #3f5068">{{s.d}}</p>
+</div>
+</template>
+</div>
+<div><a href="#registro" class="btn btn-coral"><span data-t="ctaStart"></span></a></div>
+</div>
+</section>
+
+<section id="video" style="padding: clamp(56px,7vw,96px) 0">
+<div class="wrap hero">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="vidTitle"></span></h2>
+<p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="vidSub"></span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://youtu.be/RUubuWXMKY4" class="btn" style="background: #10223a; color: #fff"><span data-t="vidBtn"></span></a></div>
+</div>
+<div style="aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; background: #10223a"><iframe src="https://www.youtube.com/embed/RUubuWXMKY4" title="Así es trabajar con Hispanhandle" style="width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+</div>
+</section>
+
+<section id="equipo" style="background: #f3f7fb; padding: clamp(56px,7vw,96px) 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="max-width: 720px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="teamTitle"></span></h2>
+<p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="teamSub"></span></p>
+</div>
+<div class="g4">
+<template data-for="team" data-as="m">
+<div style="background: #ffffff; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column">
+<div style="aspect-ratio: 1 / 1; background: linear-gradient(160deg,#d7e4f3,#b9cde6); display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 44px; color: #2b6f9e">{{m.i}}</div>
+<div style="padding: 16px 18px 20px"><div style="font-weight: 700; font-size: 18px">{{m.name}}</div><div style="font-size: 15px; color: #3f5068">{{m.role}}</div><div style="font-size: 14px; color: #5a6b80">{{m.city}}</div></div>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<section id="registro" style="background: #17496e; color: #ffffff; padding: clamp(56px,7vw,96px) 0">
+<div class="wrap apply">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<h2 style="font-size: clamp(32px,4vw,48px); line-height: 1.06; font-weight: 800; color: #fff"><span data-t="regTitle"></span></h2>
+<template data-for="regPoints" data-as="p">
+<div style="display: flex; gap: 12px; align-items: flex-start; font-size: 18px; color: #dbe7f5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8e86a" stroke-width="2.6" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{p}}</div>
+</template>
+<p style="margin: 8px 0 0; color: #c3d5ea"><span data-t="regOr"></span> <a href="mailto:hispanhandle1806@gmail.com" style="color: #ffffff; font-weight: 700">hispanhandle1806@gmail.com</a></p>
+</div>
+<div style="background: #ffffff; color: #10223a; border-radius: 22px; padding: clamp(22px,3vw,36px)">
+<div id="thanks" hidden>
+<div style="text-align: center; padding: 40px 10px; display: flex; flex-direction: column; gap: 12px; align-items: center">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#2b6f9e" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M7.5 12.5l3 3 6-6"></path></svg>
+<h3 style="font-size: 26px; font-weight: 800"><span data-t="thanksTitle"></span></h3>
+<p style="margin: 0; color: #3f5068"><span data-t="thanksSub"></span></p>
+<button type="button" class="btn" id="again" style="background: #eef3f9; color: #10223a"><span data-t="again"></span></button>
+</div>
+</div>
+<div id="formwrap">
+<form id="regform" class="fields">
+<div><label for="f-name"><span data-t="fName"></span></label><input id="f-name" name="name" autocomplete="name" required></div>
+<div><label for="f-phone"><span data-t="fPhone"></span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+<div class="full"><label for="f-email"><span data-t="fEmail"></span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+<div><label for="f-city"><span data-t="fCity"></span></label><input id="f-city" name="city" autocomplete="address-level2"></div>
+<div><label for="f-state"><span data-t="fState"></span></label><select id="f-state" name="state"><option>Florida</option><option>Texas</option><option data-t="other"></option></select></div>
+<div class="full"><label for="f-contact"><span data-t="fContact"></span></label><select id="f-contact" name="contact"><option>WhatsApp</option><option data-t="call"></option><option>Email</option></select></div>
+<div class="full"><button type="submit" class="btn btn-coral" style="width: 100%"><span data-t="send"></span></button></div>
+<p class="full" style="margin: 0; font-size: 14px; color: #5a6b80"><span data-t="privacy"></span></p>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<section id="oficinas" style="padding: clamp(56px,7vw,96px) 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 36px">
+<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="offTitle"></span></h2>
+<div class="g4">
+<template data-for="offices" data-as="o">
+<div style="border: 1.5px solid #dbe3ed; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="font-size: 22px; font-weight: 800">{{o.city}}</h3>
+<p style="margin: 0; color: #3f5068; white-space: pre-line">{{o.addr}}</p>
+<a href="{{o.tel}}" style="font-weight: 700; text-decoration: none; white-space: nowrap">{{o.phone}}</a>
+<a href="{{o.map}}" style="font-weight: 600"><span data-t="directions"></span></a>
+</div>
+</template>
+</div>
+</div>
+</section>
+
+<footer style="background: #10223a; color: #c3d0e0; padding: 48px 0 36px">
+<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 380px">
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 22px; color: #fff">Hispanhandle</span>
+<span><span data-t="tagline"></span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<a href="tel:+12566315034" style="color: #fff; text-decoration: none">256-631-5034</a>
+<a href="mailto:hispanhandle1806@gmail.com" style="color: #fff">hispanhandle1806@gmail.com</a>
+</div>
+<nav aria-label="Social" style="display: flex; gap: 18px; align-items: flex-start">
+<a href="https://www.instagram.com/hispanhandle" style="color: #fff">Instagram</a>
+<a href="https://www.facebook.com/" style="color: #fff">Facebook</a>
+<a href="https://www.youtube.com/@Hispanhandle" style="color: #fff">YouTube</a>
+</nav>
+</div>
+<div class="wrap" style="margin-top: 28px; font-size: 14px; color: #8fa1b8">© 2026 Hispanhandle · <span data-t="rights"></span></div>
+</footer>
+
+</div>
+<script>
+(function(){
+var T={
+      es: {
+        navBenefits: 'Beneficios', navHow: 'Cómo empezar', navTeam: 'Equipo', navOffices: 'Oficinas', navApply: 'Aplicar',
+        heroKicker: 'Donde el servicio es personalizado a tu idioma',
+        heroTitle: 'Conviértete en agente de seguros, sin experiencia previa',
+        heroSub: 'Te pagamos el entrenamiento y la licencia. Trabaja con horario flexible, ingresos sin límite y una comunidad hispana que te apoya en cada paso.',
+        ctaStart: 'Quiero empezar mi carrera', ctaVideo: 'Ver cómo es trabajar aquí',
+        photoNote: 'Foto del equipo aquí',
+        badgeTitle: 'Agencia autorizada', badgeSub: 'Florida Blue y otras aseguradoras líderes',
+        carriers: 'Trabajamos con',
+        benTitle: 'Todo lo que necesitas para empezar', benSub: 'No necesitas título universitario ni experiencia en seguros. Nosotros te preparamos.',
+        howTitle: 'Empezar es fácil: 3 pasos',
+        vidTitle: 'Así es trabajar con Hispanhandle', vidSub: 'Escucha a nuestro fundador y a los agentes del equipo contar su experiencia.', vidBtn: 'Ver el video',
+        teamTitle: 'Un equipo de más de 80 agentes', teamSub: 'Gente como tú, que empezó desde cero y hoy crece en el norte de Florida.',
+        regTitle: 'Empieza tu proceso hoy mismo', regOr: 'O escríbenos:',
+        fName: 'Nombre completo', fPhone: 'Teléfono / WhatsApp', fEmail: 'Correo electrónico', fCity: 'Ciudad', fState: 'Estado', fContact: '¿Cómo prefieres que te contactemos?',
+        other: 'Otro', call: 'Llamada', send: 'Enviar mi información',
+        privacy: 'Usamos tus datos solo para contactarte sobre la oportunidad.',
+        thanksTitle: '¡Gracias!', thanksSub: 'Recibimos tu información. Te contactaremos muy pronto.', again: 'Enviar otra',
+        offTitle: 'Visítanos', directions: 'Cómo llegar',
+        tagline: 'Recluta y forma agentes de seguros hispanos en Florida y Texas.', rights: 'Todos los derechos reservados.'
+      },
+      en: {
+        navBenefits: 'Benefits', navHow: 'How to start', navTeam: 'Team', navOffices: 'Offices', navApply: 'Apply',
+        heroKicker: 'Where service speaks your language',
+        heroTitle: 'Become an insurance agent, no experience needed',
+        heroSub: 'We pay for your training and your license. Enjoy a flexible schedule, unlimited income and a Hispanic community that supports you every step of the way.',
+        ctaStart: 'I want to start my career', ctaVideo: 'See what it’s like here',
+        photoNote: 'Team photo here',
+        badgeTitle: 'Authorized agency', badgeSub: 'Florida Blue and other leading carriers',
+        carriers: 'We work with',
+        benTitle: 'Everything you need to get started', benSub: 'No college degree or insurance experience required. We prepare you.',
+        howTitle: 'Getting started is easy: 3 steps',
+        vidTitle: 'What it’s like to work with Hispanhandle', vidSub: 'Hear our founder and our agents share their experience.', vidBtn: 'Watch the video',
+        teamTitle: 'A team of 80+ agents', teamSub: 'People like you who started from zero and are now growing across North Florida.',
+        regTitle: 'Start your process today', regOr: 'Or email us:',
+        fName: 'Full name', fPhone: 'Phone / WhatsApp', fEmail: 'Email', fCity: 'City', fState: 'State', fContact: 'How should we contact you?',
+        other: 'Other', call: 'Phone call', send: 'Send my information',
+        privacy: 'We only use your information to contact you about this opportunity.',
+        thanksTitle: 'Thank you!', thanksSub: 'We received your information. We’ll reach out very soon.', again: 'Send another',
+        offTitle: 'Visit us', directions: 'Get directions',
+        tagline: 'Recruiting and developing Hispanic insurance agents in Florida and Texas.', rights: 'All rights reserved.'
+      }
+    };
+function data(L){var es=L==='es';
+var pick=function(a){return a.map(function(x){return {t:x[L][0],d:x[L][1]};});};
+var map=function(q){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);};
+return {
+stats: es
+        ? [{ n: '80+', l: 'agentes activos' }, { n: 'FL y TX', l: 'presencia regional' }, { n: '$0', l: 'inversión inicial' }]
+        : [{ n: '80+', l: 'active agents' }, { n: 'FL & TX', l: 'regional presence' }, { n: '$0', l: 'upfront investment' }],
+      carriers: ['Florida Blue', 'F&G Annuities & Life', 'American National', 'National Life Group', 'Assurant', 'WNIC', 'USAble Life'],
+      benefits: pick([
+        { es: ['Entrenamiento pagado', 'Aprende el negocio desde cero con entrenamiento que nosotros cubrimos.'], en: ['Paid training', 'Learn the business from scratch with training we pay for.'] },
+        { es: ['Licencia cubierta', 'Cubrimos el costo de tu licencia de agente de seguros.'], en: ['License covered', 'We cover the cost of your insurance agent license.'] },
+        { es: ['Ingresos sin límite', 'Tus ingresos crecen según tu esfuerzo. Sin techo.'], en: ['Unlimited income', 'Your earnings grow with your effort. No ceiling.'] },
+        { es: ['Horario flexible', 'Organiza tu tiempo alrededor de tu familia y tu vida.'], en: ['Flexible schedule', 'Plan your time around your family and your life.'] },
+        { es: ['Soporte constante', 'Un manager y un equipo contigo en cada etapa.'], en: ['Ongoing support', 'A manager and a team with you at every stage.'] },
+        { es: ['Comunidad hispana', 'Trabaja en tu idioma, con gente que entiende tu cultura.'], en: ['Hispanic community', 'Work in your language, with people who understand your culture.'] }
+      ]),
+      steps: pick([
+        { es: ['Aplica en 1 minuto', 'Déjanos tus datos y te contactamos por WhatsApp o llamada.'], en: ['Apply in 1 minute', 'Leave your info and we’ll contact you by WhatsApp or phone.'] },
+        { es: ['Entrénate y licénciate', 'Te preparamos y cubrimos la licencia, sin costo para ti.'], en: ['Train and get licensed', 'We prepare you and cover the license, at no cost to you.'] },
+        { es: ['Empieza a ganar', 'Trabaja con tu manager, crece con el equipo y llega a manager.'], en: ['Start earning', 'Work with your manager, grow with the team and become a manager.'] }
+      ]).map(function(s,i){return Object.assign({},s,{n:String(i+1)});}),
+      team: [
+        { i: 'RH', name: 'Reydel Hernández', role: es ? 'Fundador' : 'Founder', city: 'North Florida' },
+        { i: 'YD', name: 'Yleny Duran', role: 'Manager', city: 'Pensacola – DeFuniak Springs, FL' },
+        { i: 'JJ', name: 'Jaidy Jack', role: 'Manager', city: 'Panama City – Jacksonville, FL' },
+        { i: 'AR', name: 'Alexander Reyes', role: es ? 'Manager, Seguros de Vida' : 'Manager, Life Insurance', city: 'Fort Walton Beach, FL' },
+        { i: 'SC', name: 'Sady Cardona', role: es ? 'Agente de Salud y Propiedad' : 'Health & Property Agent', city: 'Fort Walton Beach, FL' },
+        { i: 'GV', name: 'Genedis Vicente', role: es ? 'Agente de Seguros' : 'Insurance Agent', city: 'Jacksonville, FL' },
+        { i: 'VA', name: 'Viviana Astaiza', role: es ? 'Agente de Seguros' : 'Insurance Agent', city: 'Jacksonville, FL' }
+      ],
+      regPoints: es
+        ? ['No necesitas experiencia', 'Entrenamiento y licencia pagados', 'Respuesta rápida por WhatsApp o llamada']
+        : ['No experience needed', 'Paid training and license', 'Fast reply by WhatsApp or phone'],
+      offices: [
+        { city: 'Pensacola', addr: '1550 Creighton Rd, Suite 7\nPensacola, FL 32504', phone: '(850) 374-3035', tel: 'tel:+18503743035', map: map('1550 Creighton Rd Suite 7, Pensacola, FL 32504') },
+        { city: 'Mary Esther', addr: '124 E Miracle Strip Pkwy #201\nMary Esther, FL 32569', phone: '(850) 846-9195', tel: 'tel:+18508469195', map: map('124 E Miracle Strip Pkwy #201, Mary Esther, FL 32569') },
+        { city: 'Panama City', addr: '2316 Lisenby Ave, Suite B\nPanama City, FL 32405', phone: '(850) 988-5987', tel: 'tel:+18509885987', map: map('2316 Lisenby Ave Suite B, Panama City, FL 32405') },
+        { city: 'Jacksonville', addr: '11915 Beach Blvd #114\nJacksonville, FL 32246', phone: '(904) 441-7260', tel: 'tel:+19044417260', map: map('11915 Beach Blvd #114, Jacksonville, FL 32246') }
+      ]
+};}
+function esc(v){return String(v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function render(L){
+  var t=T[L],d=data(L);
+  document.documentElement.lang=L;
+  document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=t[el.getAttribute('data-t')];});
+  document.querySelectorAll('template[data-for]').forEach(function(tp){
+    while(tp.previousSibling&&tp.previousSibling.nodeType===1&&tp.previousSibling.hasAttribute('data-gen'))tp.previousSibling.remove();
+    var as=tp.getAttribute('data-as'),html=tp.innerHTML;
+    d[tp.getAttribute('data-for')].forEach(function(it){
+      var h=html.replace(/\{\{\s*([\w.]+)\s*\}\}/g,function(_,k){var p=k.split('.');if(p[0]!==as)return '';var v=p.length>1?it[p[1]]:it;return esc(v==null?'':v);});
+      var w=document.createElement('div');w.innerHTML=h.trim();
+      Array.prototype.slice.call(w.children).forEach(function(c){c.setAttribute('data-gen','');tp.parentNode.insertBefore(c,tp);});
+    });
+  });
+  document.querySelectorAll('.lang').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===L?'true':'false');});
+  try{localStorage.setItem('hh-lang',L);}catch(e){}
+}
+var L='es';try{L=localStorage.getItem('hh-lang')||'es';}catch(e){}
+document.querySelectorAll('.lang').forEach(function(b){b.addEventListener('click',function(){render(b.getAttribute('data-lang'));});});
+var f=document.getElementById('regform');
+f.addEventListener('submit',function(e){
+  e.preventDefault();
+  // TODO: connect to a form service (Formspree, Google Forms, CRM). For now: open email with the data.
+  var fd=new FormData(f),lines=[];fd.forEach(function(v,k){lines.push(k+': '+v);});
+  window.location.href='mailto:hispanhandle1806@gmail.com?subject='+encodeURIComponent('Nuevo aplicante - Hispanhandle')+'&body='+encodeURIComponent(lines.join('\n'));
+  document.getElementById('formwrap').hidden=true;document.getElementById('thanks').hidden=false;
+});
+document.getElementById('again').addEventListener('click',function(){f.reset();document.getElementById('formwrap').hidden=false;document.getElementById('thanks').hidden=true;});
+render(L);
+})();
+</script>
+</body>
+</html>
