@@ -180,13 +180,15 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 </div>
 </div>
 <div id="formwrap">
-<form id="regform" class="fields">
+<form id="regform" style="position:relative" class="fields">
 <div><label for="f-name"><span data-t="fName"></span></label><input id="f-name" name="name" autocomplete="name" required></div>
 <div><label for="f-phone"><span data-t="fPhone"></span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
 <div class="full"><label for="f-email"><span data-t="fEmail"></span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
 <div><label for="f-city"><span data-t="fCity"></span></label><input id="f-city" name="city" autocomplete="address-level2"></div>
 <div><label for="f-state"><span data-t="fState"></span></label><select id="f-state" name="state"><option>Florida</option><option>Texas</option><option data-t="other"></option></select></div>
 <div class="full"><label for="f-contact"><span data-t="fContact"></span></label><select id="f-contact" name="contact"><option>WhatsApp</option><option data-t="call"></option><option>Email</option></select></div>
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<p id="formerr" class="full" role="alert" hidden style="margin:0;color:#b42318;font-weight:600"></p>
 <div class="full"><button type="submit" class="btn btn-coral" style="width: 100%"><span data-t="send"></span></button></div>
 <p class="full" style="margin: 0; font-size: 14px; color: #5a6b80"><span data-t="privacy"></span></p>
 </form>
@@ -250,7 +252,7 @@ var T={
         regTitle: 'Empieza tu proceso hoy mismo', regOr: 'O escríbenos:',
         fName: 'Nombre completo', fPhone: 'Teléfono / WhatsApp', fEmail: 'Correo electrónico', fCity: 'Ciudad', fState: 'Estado', fContact: '¿Cómo prefieres que te contactemos?',
         other: 'Otro', call: 'Llamada', send: 'Enviar mi información',
-        privacy: 'Usamos tus datos solo para contactarte sobre la oportunidad.',
+        privacy: 'Usamos tus datos solo para contactarte sobre la oportunidad.', formErr: 'No se pudo enviar. Intenta de nuevo o escríbenos a hispanhandle1806@gmail.com.',
         thanksTitle: '¡Gracias!', thanksSub: 'Recibimos tu información. Te contactaremos muy pronto.', again: 'Enviar otra',
         offTitle: 'Visítanos', directions: 'Cómo llegar',
         tagline: 'Recluta y forma agentes de seguros hispanos en Florida y Texas.', rights: 'Todos los derechos reservados.'
@@ -271,7 +273,7 @@ var T={
         regTitle: 'Start your process today', regOr: 'Or email us:',
         fName: 'Full name', fPhone: 'Phone / WhatsApp', fEmail: 'Email', fCity: 'City', fState: 'State', fContact: 'How should we contact you?',
         other: 'Other', call: 'Phone call', send: 'Send my information',
-        privacy: 'We only use your information to contact you about this opportunity.',
+        privacy: 'We only use your information to contact you about this opportunity.', formErr: 'Could not send. Please try again or email us at hispanhandle1806@gmail.com.',
         thanksTitle: 'Thank you!', thanksSub: 'We received your information. We’ll reach out very soon.', again: 'Send another',
         offTitle: 'Visit us', directions: 'Get directions',
         tagline: 'Recruiting and developing Hispanic insurance agents in Florida and Texas.', rights: 'All rights reserved.'
@@ -341,10 +343,16 @@ document.querySelectorAll('.lang').forEach(function(b){b.addEventListener('click
 var f=document.getElementById('regform');
 f.addEventListener('submit',function(e){
   e.preventDefault();
-  // TODO: connect to a form service (Formspree, Google Forms, CRM). For now: open email with the data.
-  var fd=new FormData(f),lines=[];fd.forEach(function(v,k){lines.push(k+': '+v);});
-  window.location.href='mailto:hispanhandle1806@gmail.com?subject='+encodeURIComponent('Nuevo aplicante - Hispanhandle')+'&body='+encodeURIComponent(lines.join('\n'));
-  document.getElementById('formwrap').hidden=true;document.getElementById('thanks').hidden=false;
+  if(f.querySelector('[name=_honey]').value)return;
+  var btn=f.querySelector('button[type=submit]'),err=document.getElementById('formerr');
+  btn.disabled=true;btn.style.opacity='.6';err.hidden=true;
+  var fd=new FormData(f),N={name:'Nombre',phone:'Teléfono / WhatsApp',email:'Email',city:'Ciudad',state:'Estado',contact:'Contacto preferido'},o={};fd.forEach(function(v,k){if(N[k])o[N[k]]=v;});
+  o._subject='Nuevo aplicante - Hispanhandle.com';o._template='table';o._captcha='false';o['Idioma del sitio']=CUR==='en'?'English':'Español';
+  fetch('https://formsubmit.co/ajax/hispanhandle1806@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(o)})
+  .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
+  .then(function(){document.getElementById('formwrap').hidden=true;document.getElementById('thanks').hidden=false;})
+  .catch(function(){err.textContent=T[CUR].formErr;err.hidden=false;})
+  .then(function(){btn.disabled=false;btn.style.opacity='';});
 });
 document.getElementById('again').addEventListener('click',function(){f.reset();document.getElementById('formwrap').hidden=false;document.getElementById('thanks').hidden=true;});
 document.addEventListener('click',function(e){

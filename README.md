@@ -9,6 +9,6 @@ New bilingual (Español / English) website for Hispanhandle: recruiting insuranc
 GitHub Pages: Settings → Pages → Source: "Deploy from a branch" → `main` / root. Then point hispanhandle.com's DNS to GitHub Pages and add the domain under Pages → Custom domain.
 
 ## To do
-- Connect the application form to a form service or CRM (it currently opens an email to hispanhandle1806@gmail.com).
+- Application form sends straight to hispanhandle1806@gmail.com via FormSubmit (formsubmit.co). The first submission sends an activation email to that inbox — click Activate once.
 - Add team photos and carrier logos.
 - Confirm the main phone number (256-631-5034) and the Facebook page link.
