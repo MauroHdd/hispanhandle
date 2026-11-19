@@ -90,6 +90,34 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 </div>
 </section>
 
+<section id="video" style="padding: clamp(56px,7vw,96px) 0">
+<div class="wrap hero">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="vidTitle"></span></h2>
+<p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="vidSub"></span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://youtu.be/RUubuWXMKY4" class="btn" style="background: #10223a; color: #fff"><span data-t="vidBtn"></span></a></div>
+</div>
+<div style="aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; background: #10223a"><iframe src="https://www.youtube.com/embed/RUubuWXMKY4" title="Así es trabajar con Hispanhandle" style="width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+</div>
+</section>
+
+<section id="equipo" style="background: #f3f7fb; padding: clamp(56px,7vw,96px) 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="max-width: 720px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="teamTitle"></span></h2>
+<p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="teamSub"></span></p>
+</div>
+<div class="shorts">
+<template data-for="team" data-as="m">
+<div style="background: #ffffff; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column">
+<button type="button" class="yt" data-yt="{{m.v}}" aria-label="Video: {{m.name}}" style="position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; padding: 0; border: 0; cursor: pointer; background: #10223a"><img src="https://i.ytimg.com/vi/{{m.v}}/hqdefault.jpg" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center"><span style="width: 64px; height: 64px; border-radius: 999px; background: #dddd48; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.35)"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="#10223a"></path></svg></span></span></button>
+<div style="padding: 12px 14px 16px"><div style="font-weight: 700; font-size: 17px">{{m.name}}</div><div style="font-size: 15px; color: #3f5068">{{m.role}}</div><div style="font-size: 14px; color: #5a6b80">{{m.city}}</div></div>
+</div>
+</template>
+</div>
+</div>
+</section>
+
 <section aria-label="Carriers" style="padding: 40px 0; border-bottom: 1px solid #e3e9f1">
 <div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px">
 <span style="font-weight: 700; color: #4a5b70; margin-right: 8px"><span data-t="carriers"></span></span>
@@ -131,33 +159,6 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 </div>
 </section>
 
-<section id="video" style="padding: clamp(56px,7vw,96px) 0">
-<div class="wrap hero">
-<div style="display: flex; flex-direction: column; gap: 16px">
-<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="vidTitle"></span></h2>
-<p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="vidSub"></span></p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://youtu.be/RUubuWXMKY4" class="btn" style="background: #10223a; color: #fff"><span data-t="vidBtn"></span></a></div>
-</div>
-<div style="aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; background: #10223a"><iframe src="https://www.youtube.com/embed/RUubuWXMKY4" title="Así es trabajar con Hispanhandle" style="width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
-</div>
-</section>
-
-<section id="equipo" style="background: #f3f7fb; padding: clamp(56px,7vw,96px) 0">
-<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
-<div style="max-width: 720px; display: flex; flex-direction: column; gap: 12px">
-<h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="teamTitle"></span></h2>
-<p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="teamSub"></span></p>
-</div>
-<div class="shorts">
-<template data-for="team" data-as="m">
-<div style="background: #ffffff; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column">
-<button type="button" class="yt" data-yt="{{m.v}}" aria-label="Video: {{m.name}}" style="position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; padding: 0; border: 0; cursor: pointer; background: #10223a"><img src="https://i.ytimg.com/vi/{{m.v}}/hqdefault.jpg" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center"><span style="width: 64px; height: 64px; border-radius: 999px; background: #dddd48; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.35)"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="#10223a"></path></svg></span></span></button>
-<div style="padding: 12px 14px 16px"><div style="font-weight: 700; font-size: 17px">{{m.name}}</div><div style="font-size: 15px; color: #3f5068">{{m.role}}</div><div style="font-size: 14px; color: #5a6b80">{{m.city}}</div></div>
-</div>
-</template>
-</div>
-</div>
-</section>
 
 <section id="registro" style="background: #17496e; color: #ffffff; padding: clamp(56px,7vw,96px) 0">
 <div class="wrap apply">
