@@ -22,6 +22,7 @@ h1,h2,h3{font-family:'Archivo',system-ui,sans-serif;margin:0;text-wrap:balance}
 .navlinks a:hover{color:#2b6f9e}
 .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center}
 .g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.shorts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .apply{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
 .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -34,8 +35,8 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 .btn-ghost{background:transparent;color:#ffffff;border:2px solid rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
 .lang{min-width:44px;min-height:36px;border:0;border-radius:999px;background:transparent;color:#10223a;font-weight:700;font-size:15px;cursor:pointer}.lang[aria-pressed=true]{background:#2b6f9e;color:#fff}
 .chip{padding:10px 18px;border-radius:999px;background:#eef3f9;font-weight:600;font-size:15px;color:#10223a;white-space:nowrap}
-@media(max-width:900px){.navlinks{display:none}.hero,.apply{grid-template-columns:minmax(0,1fr);gap:36px}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:560px){.g4,.fields{grid-template-columns:minmax(0,1fr)}.hidesm{display:none}}
+@media(max-width:900px){.shorts{grid-template-columns:repeat(3,minmax(0,1fr))}.navlinks{display:none}.hero,.apply{grid-template-columns:minmax(0,1fr);gap:36px}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.shorts{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.g4,.fields{grid-template-columns:minmax(0,1fr)}.hidesm{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -150,11 +151,11 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 <h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="teamTitle"></span></h2>
 <p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="teamSub"></span></p>
 </div>
-<div class="g3">
+<div class="shorts">
 <template data-for="team" data-as="m">
 <div style="background: #ffffff; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column">
-<button type="button" class="yt" data-yt="{{m.v}}" aria-label="Video: {{m.name}}" style="position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; cursor: pointer; background: #10223a"><img src="https://i.ytimg.com/vi/{{m.v}}/hqdefault.jpg" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center"><span style="width: 64px; height: 64px; border-radius: 999px; background: #dddd48; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.35)"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="#10223a"></path></svg></span></span></button>
-<div style="padding: 16px 18px 20px"><div style="font-weight: 700; font-size: 18px">{{m.name}}</div><div style="font-size: 15px; color: #3f5068">{{m.role}}</div><div style="font-size: 14px; color: #5a6b80">{{m.city}}</div></div>
+<button type="button" class="yt" data-yt="{{m.v}}" aria-label="Video: {{m.name}}" style="position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; padding: 0; border: 0; cursor: pointer; background: #10223a"><img src="https://i.ytimg.com/vi/{{m.v}}/hqdefault.jpg" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center"><span style="width: 64px; height: 64px; border-radius: 999px; background: #dddd48; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.35)"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="#10223a"></path></svg></span></span></button>
+<div style="padding: 12px 14px 16px"><div style="font-weight: 700; font-size: 17px">{{m.name}}</div><div style="font-size: 15px; color: #3f5068">{{m.role}}</div><div style="font-size: 14px; color: #5a6b80">{{m.city}}</div></div>
 </div>
 </template>
 </div>
@@ -349,7 +350,7 @@ document.addEventListener('click',function(e){
   var f=document.createElement('iframe');
   f.src='https://www.youtube.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0';
   f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;
-  f.style.cssText='display:block;width:100%;aspect-ratio:16/9;border:0';
+  f.style.cssText='display:block;width:100%;aspect-ratio:9/16;border:0';
   b.replaceWith(f);
 });
 render(L);
