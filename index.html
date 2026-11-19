@@ -90,6 +90,13 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 </div>
 </section>
 
+<section aria-label="Carriers" style="padding: 40px 0; border-bottom: 1px solid #e3e9f1">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px">
+<span style="font-weight: 700; color: #4a5b70; margin-right: 8px"><span data-t="carriers"></span></span>
+<template data-for="carriers" data-as="c"><span class="chip">{{c}}</span></template>
+</div>
+</section>
+
 <section id="video" style="padding: clamp(56px,7vw,96px) 0">
 <div class="wrap hero">
 <div style="display: flex; flex-direction: column; gap: 16px">
@@ -97,7 +104,7 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 <p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="vidSub"></span></p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://youtu.be/RUubuWXMKY4" class="btn" style="background: #10223a; color: #fff"><span data-t="vidBtn"></span></a></div>
 </div>
-<div style="aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; background: #10223a"><iframe src="https://www.youtube.com/embed/RUubuWXMKY4" title="Así es trabajar con Hispanhandle" style="width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+<div style="aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; background: #10223a"><iframe id="founder-video" data-yt="RUubuWXMKY4" src="https://www.youtube.com/embed/RUubuWXMKY4?rel=0" title="Así es trabajar con Hispanhandle" style="width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
 </div>
 </section>
 
@@ -118,12 +125,6 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 </div>
 </section>
 
-<section aria-label="Carriers" style="padding: 40px 0; border-bottom: 1px solid #e3e9f1">
-<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px">
-<span style="font-weight: 700; color: #4a5b70; margin-right: 8px"><span data-t="carriers"></span></span>
-<template data-for="carriers" data-as="c"><span class="chip">{{c}}</span></template>
-</div>
-</section>
 
 <section id="beneficios" style="padding: clamp(56px,7vw,96px) 0">
 <div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
@@ -265,7 +266,7 @@ var T={
         carriers: 'We work with',
         benTitle: 'Everything you need to get started', benSub: 'No college degree or insurance experience required. We prepare you.',
         howTitle: 'Getting started is easy: 3 steps',
-        vidTitle: 'What it’s like to work with Hispanhandle', vidSub: 'Hear our founder and our agents share their experience.', vidBtn: 'Watch the video',
+        vidTitle: 'What it’s like to work with Hispanhandle', vidSub: 'Hear our founder and our agents share their experience. Videos are in Spanish; English subtitles turn on automatically.', vidBtn: 'Watch the video',
         teamTitle: 'A team of 80+ agents', teamSub: 'People like you who started from zero. Hear what our agents and managers have to say.',
         regTitle: 'Start your process today', regOr: 'Or email us:',
         fName: 'Full name', fPhone: 'Phone / WhatsApp', fEmail: 'Email', fCity: 'City', fState: 'State', fContact: 'How should we contact you?',
@@ -318,7 +319,8 @@ stats: es
 function esc(v){return String(v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 function render(L){
   var t=T[L],d=data(L);
-  document.documentElement.lang=L;
+  CUR=L;document.documentElement.lang=L;
+  var fv=document.getElementById('founder-video');if(fv){var ns=ytSrc(fv.getAttribute('data-yt'),false);if(fv.src!==ns)fv.src=ns;}
   document.querySelectorAll('[data-t]').forEach(function(el){el.textContent=t[el.getAttribute('data-t')];});
   document.querySelectorAll('template[data-for]').forEach(function(tp){
     while(tp.previousSibling&&tp.previousSibling.nodeType===1&&tp.previousSibling.hasAttribute('data-gen'))tp.previousSibling.remove();
@@ -332,6 +334,8 @@ function render(L){
   document.querySelectorAll('.lang').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===L?'true':'false');});
   try{localStorage.setItem('hh-lang',L);}catch(e){}
 }
+var CUR='es';
+function ytSrc(id,auto){var q='rel=0'+(auto?'&autoplay=1':'');if(CUR==='en')q+='&cc_load_policy=1&cc_lang_pref=en&hl=en';else q+='&hl=es';return 'https://www.youtube.com/embed/'+id+'?'+q;}
 var L='es';try{L=localStorage.getItem('hh-lang')||'es';}catch(e){}
 document.querySelectorAll('.lang').forEach(function(b){b.addEventListener('click',function(){render(b.getAttribute('data-lang'));});});
 var f=document.getElementById('regform');
@@ -346,7 +350,7 @@ document.getElementById('again').addEventListener('click',function(){f.reset();d
 document.addEventListener('click',function(e){
   var b=e.target.closest&&e.target.closest('button.yt');if(!b)return;
   var f=document.createElement('iframe');
-  f.src='https://www.youtube.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0';
+  f.src=ytSrc(b.getAttribute('data-yt'),true);
   f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;
   f.style.cssText='display:block;width:100%;aspect-ratio:9/16;border:0';
   b.replaceWith(f);
