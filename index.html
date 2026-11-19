@@ -150,10 +150,10 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid 
 <h2 style="font-size: clamp(30px,3.6vw,44px); line-height: 1.08; font-weight: 800"><span data-t="teamTitle"></span></h2>
 <p style="margin: 0; font-size: 18px; color: #3f5068"><span data-t="teamSub"></span></p>
 </div>
-<div class="g4">
+<div class="g3">
 <template data-for="team" data-as="m">
 <div style="background: #ffffff; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column">
-<div style="aspect-ratio: 1 / 1; background: linear-gradient(160deg,#d7e4f3,#b9cde6); display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 44px; color: #2b6f9e">{{m.i}}</div>
+<button type="button" class="yt" data-yt="{{m.v}}" aria-label="Video: {{m.name}}" style="position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; cursor: pointer; background: #10223a"><img src="https://i.ytimg.com/vi/{{m.v}}/hqdefault.jpg" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center"><span style="width: 64px; height: 64px; border-radius: 999px; background: #dddd48; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.35)"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="#10223a"></path></svg></span></span></button>
 <div style="padding: 16px 18px 20px"><div style="font-weight: 700; font-size: 18px">{{m.name}}</div><div style="font-size: 15px; color: #3f5068">{{m.role}}</div><div style="font-size: 14px; color: #5a6b80">{{m.city}}</div></div>
 </div>
 </template>
@@ -246,7 +246,7 @@ var T={
         benTitle: 'Todo lo que necesitas para empezar', benSub: 'No necesitas título universitario ni experiencia en seguros. Nosotros te preparamos.',
         howTitle: 'Empezar es fácil: 3 pasos',
         vidTitle: 'Así es trabajar con Hispanhandle', vidSub: 'Escucha a nuestro fundador y a los agentes del equipo contar su experiencia.', vidBtn: 'Ver el video',
-        teamTitle: 'Un equipo de más de 80 agentes', teamSub: 'Gente como tú, que empezó desde cero y hoy crece en el norte de Florida.',
+        teamTitle: 'Un equipo de más de 80 agentes', teamSub: 'Gente como tú, que empezó desde cero. Escucha lo que dicen nuestros agentes y managers.',
         regTitle: 'Empieza tu proceso hoy mismo', regOr: 'O escríbenos:',
         fName: 'Nombre completo', fPhone: 'Teléfono / WhatsApp', fEmail: 'Correo electrónico', fCity: 'Ciudad', fState: 'Estado', fContact: '¿Cómo prefieres que te contactemos?',
         other: 'Otro', call: 'Llamada', send: 'Enviar mi información',
@@ -267,7 +267,7 @@ var T={
         benTitle: 'Everything you need to get started', benSub: 'No college degree or insurance experience required. We prepare you.',
         howTitle: 'Getting started is easy: 3 steps',
         vidTitle: 'What it’s like to work with Hispanhandle', vidSub: 'Hear our founder and our agents share their experience.', vidBtn: 'Watch the video',
-        teamTitle: 'A team of 80+ agents', teamSub: 'People like you who started from zero and are now growing across North Florida.',
+        teamTitle: 'A team of 80+ agents', teamSub: 'People like you who started from zero. Hear what our agents and managers have to say.',
         regTitle: 'Start your process today', regOr: 'Or email us:',
         fName: 'Full name', fPhone: 'Phone / WhatsApp', fEmail: 'Email', fCity: 'City', fState: 'State', fContact: 'How should we contact you?',
         other: 'Other', call: 'Phone call', send: 'Send my information',
@@ -299,13 +299,12 @@ stats: es
         { es: ['Empieza a ganar', 'Trabaja con tu manager, crece con el equipo y llega a manager.'], en: ['Start earning', 'Work with your manager, grow with the team and become a manager.'] }
       ]).map(function(s,i){return Object.assign({},s,{n:String(i+1)});}),
       team: [
-        { i: 'RH', name: 'Reydel Hernández', role: es ? 'Fundador' : 'Founder', city: 'North Florida' },
-        { i: 'YD', name: 'Yleny Duran', role: 'Manager', city: 'Pensacola – DeFuniak Springs, FL' },
-        { i: 'JJ', name: 'Jaidy Jack', role: 'Manager', city: 'Panama City – Jacksonville, FL' },
-        { i: 'AR', name: 'Alexander Reyes', role: es ? 'Manager, Seguros de Vida' : 'Manager, Life Insurance', city: 'Fort Walton Beach, FL' },
-        { i: 'SC', name: 'Sady Cardona', role: es ? 'Agente de Salud y Propiedad' : 'Health & Property Agent', city: 'Fort Walton Beach, FL' },
-        { i: 'GV', name: 'Genedis Vicente', role: es ? 'Agente de Seguros' : 'Insurance Agent', city: 'Jacksonville, FL' },
-        { i: 'VA', name: 'Viviana Astaiza', role: es ? 'Agente de Seguros' : 'Insurance Agent', city: 'Jacksonville, FL' }
+        { v: 'pgXJkzd2PA0', name: 'Yleny Duran', role: 'Manager', city: 'Pensacola – DeFuniak Springs, FL' },
+        { v: 'Auf9eapXhnE', name: 'Jaidy Jack', role: 'Manager', city: 'Panama City – Jacksonville, FL' },
+        { v: '1298IVZ1WP0', name: 'Alexander Reyes', role: es ? 'Manager, Seguros de Vida' : 'Manager, Life Insurance', city: 'Fort Walton Beach, FL' },
+        { v: 'BL31W-2M-D0', name: 'Sady Cardona', role: es ? 'Agente de Salud y Propiedad' : 'Health & Property Agent', city: 'Fort Walton Beach, FL' },
+        { v: 'zNB6QBX9bxQ', name: 'Genedis Vicente', role: es ? 'Agente de Seguros' : 'Insurance Agent', city: 'Jacksonville, FL' },
+        { v: 'S9Y-snYvPU4', name: 'Viviana Astaiza', role: es ? 'Agente de Seguros' : 'Insurance Agent', city: 'Jacksonville, FL' }
       ],
       regPoints: es
         ? ['No necesitas experiencia', 'Entrenamiento y licencia pagados', 'Respuesta rápida por WhatsApp o llamada']
@@ -345,6 +344,14 @@ f.addEventListener('submit',function(e){
   document.getElementById('formwrap').hidden=true;document.getElementById('thanks').hidden=false;
 });
 document.getElementById('again').addEventListener('click',function(){f.reset();document.getElementById('formwrap').hidden=false;document.getElementById('thanks').hidden=true;});
+document.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button.yt');if(!b)return;
+  var f=document.createElement('iframe');
+  f.src='https://www.youtube.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0';
+  f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;
+  f.style.cssText='display:block;width:100%;aspect-ratio:16/9;border:0';
+  b.replaceWith(f);
+});
 render(L);
 })();
 </script>
